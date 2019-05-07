@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--GENERADO POR:  Lectora Inspire v.11.3.2(9293) (http://www.trivantis.com) -->
+
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM">
+
+  <general>
+    <title>
+      <string language="en">23GIIN: PARALELISMO</string>
+    </title>
+    <language>en</language>
+    <description>
+      <string language="en">
+        Muchos de los problemas en ciencia e ingeniería se resuelven con aplicaciones de alto rendimiento, que requieren de la ejecución de muchas tareas y análisis de gran volumen de datos, lo que conlleva a la exigencia de gran poder de cómputo para ser ejecutadas en un tiempo razonable. En respuesta a esta necesidad, se ha producido una gran expansión en el uso de arquitecturas paralelas con memoria distribuida, en especial los clusters de procesadores personales, que ofrecen este poder de cómputo a través de la interacción de varios procesadores (desde decenas hasta miles). Para aprovechar este gran poder de cómputo, surge la computación de alto rendimiento  (HPC – High Performance Computing), que promueve el modelo de programación paralela. En esta asignatura se proporcionarán los principios básicos para la programación paralela y permitirá la familiarización  con ideas, conceptos y herramientas disponibles de la computación de alto rendimiento.
+      </string>
+    </description>
+    <keyword>
+      <string language="en">23GIIN: PARALELISMO</string>
+    </keyword>
+    <keyword>
+      <string language="en">computación de alto rendimiento</string>
+    </keyword>
+    <keyword>
+      <string language="en">programación paralela</string>
+    </keyword>
+    <keyword>
+      <string language="en">arquitecturas paralelas</string>
+    </keyword>
+    <keyword>
+      <string language="en">perfilamiento de aplicaciones</string>
+    </keyword>
+    <keyword>
+      <string language="en">medición del rendimiento de aplicaciones paralelas</string>
+    </keyword>
+    <keyword>
+      <string language="en">comunicación por pase de mensajes</string>
+    </keyword>
+    <keyword>
+      <string language="en">estándar MPI</string>
+    </keyword>
+    <keyword>
+      <string language="en">OpenMPI</string>
+    </keyword>
+    <keyword>
+      <string language="en">programación paralela con memoria compartida</string>
+    </keyword>
+    <keyword>
+      <string language="en">OpenMP</string>
+    </keyword>
+    <aggregationLevel>
+      <source>LOMv1.0</source>
+      <value>1</value>
+    </aggregationLevel>
+  </general>
+
+  <lifeCycle>
+    <version>
+      <string>1.0</string>
+    </version>
+    <status>
+      <source>LOMv1.0</source>
+      <value>final</value>
+    </status>
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>author</value>
+      </role>
+      <entity>
+        BEGIN:vcard
+        ORG:Yudith C. Cardinale Villarreal
+        END:vcard
+      </entity>
+      <date>
+         <dateTime>2018-12-13</dateTime>
+      </date>
+    </contribute>
+  </lifeCycle>
+
+  <metaMetadata>
+    <metadataSchema>ADL SCORM(TM) 1.2</metadataSchema>
+  </metaMetadata>
+
+  <technical>
+    <format>text/html</format>
+    <location>a001index.html</location>
+    <requirement>
+      <orComposite>
+        <type>
+           <source>LOMv1.0</source>
+           <value>browser</value>
+        </type>
+        <name>
+           <source>LOMv1.0</source>
+           <value>ms-internet explorer</value>
+        </name>
+        <minimumVersion>6.0</minimumVersion>
+      </orComposite>
+    </requirement>
+    <otherPlatformRequirements>
+      <string>jswdk1.2.2</string>
+    </otherPlatformRequirements>
+  </technical>
+
+  <rights>
+    <cost>
+      <source>LOMv1.0</source>
+      <value>no</value>
+    </cost>
+    <copyrightAndOtherRestrictions>
+      <source>LOMv1.0</source>
+      <value>no</value>
+    </copyrightAndOtherRestrictions>
+  </rights>
+  <classification>
+    <purpose>
+      <source>LOMv1.0</source>
+      <value>discipline</value>
+    </purpose>
+    <description>
+      <string language="en">23GIIN: PARALELISMO</string>
+    </description>
+    <keyword>
+      <string language="en">23GIIN: PARALELISMO</string>
+    </keyword>
+        <keyword>
+      <string language="en">computación de alto rendimiento</string>
+    </keyword>
+    <keyword>
+      <string language="en">programación paralela</string>
+    </keyword>
+    <keyword>
+      <string language="en">arquitecturas paralelas</string>
+    </keyword>
+    <keyword>
+      <string language="en">perfilamiento de aplicaciones</string>
+    </keyword>
+    <keyword>
+      <string language="en">medición del rendimiento de aplicaciones paralelas</string>
+    </keyword>
+    <keyword>
+      <string language="en">comunicación por pase de mensajes</string>
+    </keyword>
+    <keyword>
+      <string language="en">estándar MPI</string>
+    </keyword>
+    <keyword>
+      <string language="en">OpenMPI</string>
+    </keyword>
+    <keyword>
+      <string language="en">programación paralela con memoria compartida</string>
+    </keyword>
+    <keyword>
+      <string language="en">OpenMP</string>
+    </keyword>
+  </classification>
+
+</lom>

@@ -1,0 +1,78 @@
+<span id="top" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span>
+<div id="contenedor-curso" style="margin: 0 auto;">
+    <h1 class="unit"><span class="number">3</span>Lorem ...</h1>
+    <p class="instructions">Pulse sobre las imágenes para ampliar la información.</p>
+    <div id="flexy-not-ie" class="flexy">
+        <div class="flip-card" onclick="flip(1)">
+            <div class="front-card">
+                <img src="img/07/25GIIN_Imagen2a.jpg">
+                <p class="orange-text">
+                    Caso 1
+                </p>
+            </div>
+            <div class="back-card">
+               <p>Tenemos una base de datos simple, que provee información a un solo usuario, por lo que el crecimiento de los requerimientos y de la base de datos es limitado. Entonces tal vez pasar de la 3FN sería algo exagerado, o tal vez llegar solo a una forma normal si el modelo no es complejo.</p>
+            </div>
+        </div>                               
+        <div class="flip-card" onclick="flip(2)">
+            <div class="front-card">
+                <img src="img/07/25GIIN_Imagen2b.jpg">
+                <p class="orange-text">
+                    Caso 2
+                </p>
+            </div >
+            <div class="back-card">
+                <p>Tenemos una base de datos compleja, con miles de usuarios a los cuales proveer y el crecimiento es muy rápido. Para este caso sería obligatorio como mínimo llegar a una 3FN y explorar las otras formas normales para eliminar dependencias múltiples y claves relacionadas.</p>
+            </div>
+        </div>
+    </div>
+    <div id="flexy-ie" class="flexy">
+        <div class="ie-card" onclick="flipIE(1)">
+            <div class="ie-front-card">
+                <img src="img/07/25GIIN_Imagen2a.jpg">
+                <p class="orange-text">
+                    Caso 1
+                </p>
+            </div>
+            <div class="ie-back-card">
+                <p>Tenemos una base de datos simple, que provee información a un solo usuario, por lo que el crecimiento de los requerimientos y de la base de datos es limitado. Entonces tal vez pasar de la 3FN sería algo exagerado, o tal vez llegar solo a una forma normal si el modelo no es complejo.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+
+    // Safari 3.0+ "[object HTMLElementConstructor]" 
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+
+    // Chrome 1+
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+    // Blink engine detection
+    var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+    if (isIE) {
+        document.getElementById('flexy-not-ie').style.display = "none";
+    } else {
+        document.getElementById('flexy-ie').style.display = "none";
+    }
+    function flip(e) {
+        e--
+        $(".flip-card").eq(e).toggleClass('turn');
+    }
+    function flipIE(e) {
+        e--
+        $(".ie-card").eq(e).toggleClass('show');
+    }
+</script>

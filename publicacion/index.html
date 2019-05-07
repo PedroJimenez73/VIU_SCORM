@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VIU - GRADO EN INGENIERÍA INFORMÁTICA</title>
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <!-- <link rel="stylesheet" type="text/css" media="all" href="css/media.css"> -->
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/scorm/APIWrapper_2004.js"></script>
+  <script type="text/javascript" src="js/scorm/SCOFunctions.js"></script>
+  <script type="text/javascript" language="javascript" charset="utf-8" src="js/functions.js"></script>
+  <script type="text/javascript" language="javascript" charset="utf-8" src="js/scorm/general.js" ></script>
+  <link rel="icon" type="image/x-icon" href="viu_icon.gif">
+</head>
+<body style="overflow:hidden;" onResize="ajustarResolucion()" id="curso">
+
+  <div id="btnIndice">
+    <div class="barra arriba"></div>
+    <div class="barra medio"></div>
+    <div class="barra abajo"></div>
+    <span class="etiqBtn">Índice</span>
+  </div>
+  <header>
+    <div>
+      <h4>Grado en Ingeniería Informática</h4>
+      <h4>Diseño y Desarrollo de Sistemas de Información</h4>
+    </div>
+    <div><img src="img/logo.svg"/></div>
+  </header>
+  <section id="contenido">
+    <div id="player" style="position:relative;"></div>
+  </section>
+  <div id="contenedor_indice">
+    <section id="indice">
+      <div class="cabecera-menu">
+        <p>Índice</p>
+      </div>
+      <div class="contInd contenidoPopup">
+        <ul id="listaInd"></ul>
+      </div>
+    </section>
+  </div>
+  <footer id="pie">
+    <button id="btnAtras" onClick="temaAnterior()">Anterior</button>
+    <div id="progreso"></div>
+    <button id="btnSig" onClick="temaSiguiente()">Siguiente</button>
+    <button id="btnSalir" onClick="mostrarSalir()">Salir</button>
+    <button id="btnSalirMini" onClick="mostrarSalir()">x</button>
+  </footer>
+  <div class="overlay" id="overlay" style="display:none;"></div>
+  <section id="retomar">
+      <div class="contRetomar">
+        <p>¿Deseas volver a la última pantalla que visitaste?</p>
+        <div>
+            <a href="javascript:siRetomar()" class="siRet">Sí</a>
+            <a href="javascript:noRetomar()" class="noRet">No</a>
+        </div>
+      </div>
+  </section>
+  <section id="salir">
+      <div class="contSalir">
+        <p>¿Deseas salir?</p>
+        <div>
+            <a href="javascript:siSalir()" class="siRet">Sí</a>
+            <a href="javascript:noSalir()" class="noRet">No</a>
+        </div>
+      </div>
+  </section>
+  <script type="text/javascript" language="javascript" charset="utf-8" src="js/paginas.js"></script>
+</body>
+</html>

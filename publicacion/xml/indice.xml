@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<indice>
+	<capitulo titulo="">
+		<pagina numero="nada" titulo="Portada" mostrar="no" ruta="contenido/0001/index.html"/>
+		<pagina numero="01" titulo="Presentación " mostrar="si" ruta="contenido/0002/index.html"/>
+		<pagina numero="02" titulo="Mapa Conceptual " mostrar="si" ruta="contenido/0003/index.html"/>			
+		<pagina numero="1." titulo="Nociones Fundamentales de Paralelismo" mostrar="si" ruta="contenido/0004/index.html"/>	
+		<pagina numero="2." titulo="Introducción a las Arquitecturas Paralelas" mostrar="si" ruta="contenido/0005/index.html"/>	
+		<pagina numero="3." titulo="Técnicas de Diseño de Aplicaciones Paralelas" mostrar="si" ruta="contenido/0006/index.html"/>	
+		<pagina numero="4." titulo="Análisis de Aplicaciones Paralelas" mostrar="si" ruta="contenido/0007/index.html"/>	
+		<pagina numero="5." titulo="Herramientas de Programación Paralela" mostrar="si" ruta="contenido/0008/index.html"/>	
+		<pagina numero="03" titulo="Conclusiones" mostrar="si" ruta="contenido/conclusiones/index.html"/>
+		<pagina numero="04" titulo="Glosario" mostrar="si" ruta="contenido/glosario/index.html"/>
+		<pagina numero="05" titulo="Ejercicios autoevaluativos" mostrar="si" ruta="contenido/ejercicio1/index.html"/>
+		<pagina numero="05" titulo="Ejercicios autoevaluativos" mostrar="no" ruta="contenido/ejercicio2/index.html"/>
+		<pagina numero="05" titulo="Ejercicios autoevaluativos" mostrar="no" ruta="contenido/ejercicio3/index.html"/>
+		<pagina numero="05" titulo="Ejercicios autoevaluativos" mostrar="no" ruta="contenido/ejercicio4/index.html"/>
+		<pagina numero="6." titulo="Créditos" mostrar="si" ruta="contenido/creditos/index.html"/>
+	</capitulo>
+</indice>
+

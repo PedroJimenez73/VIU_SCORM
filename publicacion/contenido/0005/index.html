@@ -1,0 +1,56 @@
+<span id="top" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span>
+<div id="contenedor-curso" style="margin: 0 auto;">
+    <h1 class="unit"><span class="number">2</span>Lorem ...</h1>
+    <div class="accordion">
+        <section>
+            <div class="head-info" onclick="toggleContent(1)">
+                <span> <img class="plus" src="img/267-plus.svg"> <img class="minus" src="img/268-minus.svg">
+                    Independencia física</span> 
+                <img class="arrow" src="img/324-down.svg">
+            </div>
+            <div class="content-info">
+                <p>
+                    La forma de almacenar los datos es absolutamente independiente del modelo conceptual, es decir que, si mi forma de almacenar los datos cambia, no tiene por qué cambiar mi esquema lógico. De esta forma se asegura que el modelo conceptual se centre en los resultados que desea obtener con este modelo independientemente de la forma como estén almacenados físicamente.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="head-info" onclick="toggleContent(2)">
+                <span> <img class="plus" src="img/267-plus.svg"> <img class="minus" src="img/268-minus.svg">
+                    Independencia física 2</span> 
+                <img class="arrow" src="img/324-down.svg">
+            </div>
+            <div class="content-info">
+                <p>
+                    La forma de almacenar los datos es absolutamente independiente del modelo conceptual, es decir que, si mi forma de almacenar los datos cambia, no tiene por qué cambiar mi esquema lógico. De esta forma se asegura que el modelo conceptual se centre en los resultados que desea obtener con este modelo independientemente de la forma como estén almacenados físicamente.
+                </p>
+            </div>
+        </section>																																				
+        <section>
+            <div class="head-info" onclick="toggleContent(3)">
+                <span> <img class="plus" src="img/267-plus.svg"> <img class="minus" src="img/268-minus.svg">
+                    Independencia física 3</span> 
+                <img class="arrow" src="img/324-down.svg">
+            </div>
+            <div class="content-info">
+                <p>
+                    La forma de almacenar los datos es absolutamente independiente del modelo conceptual, es decir que, si mi forma de almacenar los datos cambia, no tiene por qué cambiar mi esquema lógico. De esta forma se asegura que el modelo conceptual se centre en los resultados que desea obtener con este modelo independientemente de la forma como estén almacenados físicamente.
+                </p>
+            </div>
+        </section>																				
+    </div>
+    <h3 class="topic">2.1.1 Modelo conceptual</h3>
+
+</div>
+<script>
+    
+    function toggleContent (e) {
+        e--
+        $(".content-info").eq(e).slideToggle(700);
+        $(".plus").eq(e).toggleClass('open');
+        $(".minus").eq(e).toggleClass('open');
+        $(".arrow").eq(e).toggleClass('open');
+        let elemTop = ($('.head-info').eq(e -1).offset().top) - 140;
+        $('html,body').animate({scrollTop: elemTop});
+    }
+</script>

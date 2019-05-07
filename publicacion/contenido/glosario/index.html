@@ -1,0 +1,92 @@
+<span id="top" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span>
+<div id="contenedor-curso" style="margin: 0 auto;">
+    <h1 id="top" class="unit">Glosario</h1>
+    <p class="instructions">Pulse sobre los términos para ampliar la información.</p>
+    <div class="glosario" >
+       <div class="lista_terminos">
+           <div id="menu-glosario" style="min-height: 425px;">
+               
+           </div>
+       </div>
+       <div id="contenedores" class="contenedor_info">
+       
+       </div>
+   </div>
+   <div class="glosario-small">
+       <div id="mini-menu-glosario" class="lista_terminos_small" style="min-height: 300px;">
+       </div>
+       <div id="contenedores-mini">
+
+       </div>
+   </div>
+</div>
+<script>
+    var terminos = 
+    [
+    '<i>Clusters</i> de procesadores',
+    'Multi computadores',
+    'Multiprocesadores',
+    'Procesadores multi núcleos',
+    'Programa ejecutable',
+    'Programa fuente',
+    'Programación paralela',
+    'Supercomputadores',
+    '<b>Tasa de retorno de la inversión</b>'
+    ];
+    var definiciones = 
+    [
+    'Es una plataforma de cómputo compuesta por múltiples computadores o procesadores conectados a través de una red, preferiblemente de alta velocidad, de tal forma que sean visto como un único computador, más potente que un PC común.  El cómputo con <i>clusters</i> surge como resultado de la convergencia de varias tendencias actuales que incluyen la disponibilidad de microprocesadores económicos de alto rendimiento y redes de alta velocidad, el desarrollo de herramientas de software para cómputo distribuido de alto rendimiento, así como la creciente necesidad de potencia computacional para aplicaciones que la requieran.',
+    'Son un tipo especial de plataforma de cómputo conformado por múltiples computadores clásicos. La memoria es privada (es decir, cada procesador tiene un mapa de direcciones propio que no es accesible directamente a los demás). La comunicación entre procesadores es por pase de mensajes a través de una red de interconexión. Algunos ejemplos de multi computadores son: una red LAN o WAN, un <i>cluster</i> de computadores.',
+    'Son un tipo especial de plataforma de cómputo conformado por múltiples procesadores que pueden tener memoria privada (es decir, cada procesador tiene un mapa de direcciones propio que no es accesible directamente a los demás) o compartir una memoria principal común. La comunicación entre procesadores es por pase de mensajes a través de una red de interconexión, si es de memoria distribuida o a través del bus que conecta los procesadores a la memoria. Las PCs con múltiples núcleos o procesadores son multiprocesadores, algunos supercomputadores pueden tener este tipo de arquitecturas.',
+    'Un procesador multi núcleos es aquel que combina dos o más microprocesadores independientes en un solo  circuito integrado. Un dispositivo de doble núcleo contiene solamente dos microprocesadores independientes. En general, los microprocesadores multi núcleos permiten que un dispositivo computacional exhiba una cierta forma del paralelismo a nivel de hilos, sin incluir múltiples microprocesadores en paquetes físicos separados.',
+    'Un programa o código ejecutable está conformado por un conjunto de instrucciones de bajo nivel que son generadas por un compilador o interpretador y que son interpretadas por el CPU. Un código ejecutable está listo para ser ejecutado por el CPU.',
+    'Un programa o código fuente está conformado por un conjunto de instrucciones de  alto nivel, escritas en un lenguaje de programación determinado, elegido por el programador, tal como: Basic, C, C++, C#, Java, Perl, Python, PHP. El código fuente  no es directamente ejecutable por el computador, sino que debe ser traducido a un código ejecutable o código binario, que podrá ser interpretado por el CPU. Para esta traducción se usan los llamados compiladores, ensambladores, intérpretes y otros sistemas de traducción.',
+    'Implica el uso de múltiples recursos computacionales para resolver un problema computacional. Se distingue de la computación secuencial en que varias operaciones pueden ocurrir simultáneamente. El problema se divide en partes discretas que se pueden resolver simultáneamente. Cada parte se descompone en una serie de instrucciones. Las instrucciones de cada parte se ejecutan simultáneamente en diferentes procesadores. Se emplea un mecanismo global de control/coordinación.',
+    'Un supercomputador es un ordenador con capacidades de cálculo superiores a las computadoras comunes y de escritorio y es usado con fines específicos, especialmente en el ámbito científico. Hoy día el término de supercomputador está siendo reemplazados por computadora de alto rendimiento, dada las dimensiones que han adquirido recientemente. En noviembre de 2018, el supercomputador más rápido del mundo estaba formado por más de dos millones de procesadores.',
+    'Es la tasa de interés o rentabilidad que ofrece una inversión. Es decir, es el porcentaje de beneficio o pérdida que tendrá una inversión para las cantidades que no se han retirado del proyecto. La tasa de retorno de la inversión (TRI) puede utilizarse como indicador de la rentabilidad de un proyecto: a mayor TRI, mayor rentabilidad; así, se utiliza como uno de los criterios para decidir sobre la aceptación o rechazo de un proyecto de inversión.'
+    ]
+    var menuGlosario = document.getElementById('menu-glosario');
+    var contenedores = document.getElementById('contenedores');
+    var minimenuGlosario = document.getElementById('mini-menu-glosario');
+    var contenedoresMini = document.getElementById('contenedores-mini');
+    var contenidomenuGlosario = '';
+    var contenidoCont = '';
+    var contenidoMinimenuGlosario = '';
+    var contenidoContMini = '';
+    for (i=0; i < terminos.length; i++){
+        contenidomenuGlosario += '<p onclick="glosario('+ i + ')">'+ terminos[i] + '</p>';
+        contenidoCont += '<div id="cont' + i + '"><p class="titulo_termino">' + terminos[i] + '</p><p class="info_termino">'+ definiciones[i] + '</p></div>';
+        contenidoMinimenuGlosario +=  '<a href="#cont' + (i+terminos.length) +'">' + terminos[i] + '</a>';
+        contenidoContMini +=  '<span id="cont' + (i+terminos.length) +'" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span><div class="glosario_termino"><p class="titulo_termino_small">' + terminos[i] + '<a href="#top" class="titulo_termino_arriba">volver al índice</a></p><p class="info_termino_small">' + definiciones[i] + '</p></div>';
+    }
+    menuGlosario.innerHTML = contenidomenuGlosario;
+    contenedores.innerHTML = contenidoCont;
+    minimenuGlosario.innerHTML = contenidoMinimenuGlosario;
+    contenedoresMini.innerHTML = contenidoContMini;
+    
+    $("a").on("click",function(){
+        if(this.hash !== ""){
+            var hash = this.hash;
+            $("html, body").animate({
+                scrollTop: $(hash).offset().top
+            }, 800);
+        }
+    });
+    
+    function glosario(j){
+        id2='#cont'+j;
+        $(".contenedor_info div").fadeOut(0);
+        $(id2).fadeIn(0);
+    }
+</script>
+<script>
+/* Smooth vertical */
+$("a").on("click",function(){
+if(this.hash !== ""){
+    var hash = this.hash;
+    $("html, body").animate({
+        scrollTop: $(hash).offset().top
+    }, 800);
+}
+});
+</script>
