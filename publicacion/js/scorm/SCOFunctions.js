@@ -64,7 +64,7 @@ function loadPage()
    exitPageStatus = false;
    startTimer();
 
-	//Comentado por Diego
+	//Comentado
    //initPage();
    //initTest();
    //Fin Comentario

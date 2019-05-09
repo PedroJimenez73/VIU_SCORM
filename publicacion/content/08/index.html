@@ -1,0 +1,32 @@
+<div id="page-container" class="p-20">
+    <h1 class="unit"><span class="number">5</span>Lorem ...</h1>
+    <p>Los sistemas de información están presentes en todo momento y en todo lugar, y en el mundo actual, es evidente que tenemos la necesidad diaria de acceso y procesamiento de nuestra información. En el transcurso del día hacemos uso de los sistemas de información desde diferentes aplicaciones; desde nuestro <i>smartphone</i> o tableta, ya sea para hacer una transferencia de dinero, pagar un recibo pendiente, solicitar un reparto del supermercado o para acceder a las cámaras de videovigilancia de nuestras casas y ver si todo va en orden. De la misma forma, pero a diferente escala, cada instante se ejecutan millones de instrucciones y se procesan miles de datos de sistemas de información más complejos que permiten que la sociedad funcione, que las personas estén comunicadas y que los negocios generen valor y rentabilidad, como es el caso de las aerolíneas y sus miles de pasajeros, las empresas aduaneras y mineras, las corporaciones internacionales, las universidades, bancos y comercios electrónicos, y en general cualquier tipo y tamaño de empresa que busque mantener sus procesos automatizados y su data actualizada en tiempo real.</p>
+    <p>
+        El contexto actual permite que toda organización pueda automatizar sus procesos haciendo uso de diversas tecnologías de la información.  El hecho de poder solicitar el saldo de un número móvil vía mensaje de texto y hacer compras por Internet de una manera segura, son algunos clásicos y básicos ejemplos de que las organizaciones están utilizando la tecnología para incorporarla en su
+        <span class="tooltip" onclick="toggleTip(1)">sistema de información </span>
+        <img style="margin-bottom: -5px" src="img/208-eye-plus.svg">
+        y permitir así, que sus procesos sean cada vez más fáciles de controlar y administrar y a la vez que proporcionen mayor comodidad a sus clientes (Stair y Reynolds, 2000).
+    </p>
+    <div class="tiptext" onclick="toggleTip(1)">
+        <p>Sistema de Información (SI)</p>
+        <span>&times;</span>
+        <p>Un SI es un conjunto de componentes interrelacionados para recolectar, manipular y diseminar datos e información y para disponer de un mecanismo de retroalimentación útil para el cumplimiento de un objetivo o un fin.</p>
+    </div>
+</div>
+<div class="overlay-tip" id="overlay-tip"></div>
+<script>
+
+    function toggleTip (e) {
+        e--
+        $(".tiptext").eq(e).toggleClass("show");
+        $("#overlay-tip").toggleClass("show");
+        setTimeout(function(){
+            $(".tiptext").eq(e).toggleClass("visible");
+            $("#overlay-tip").toggleClass("visible");
+        }, 20);
+    }
+
+</script>
+
+
+

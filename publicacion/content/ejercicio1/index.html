@@ -1,0 +1,192 @@
+<div id="page-container" class="p-20">
+    <h1 class="unit">Ejercicios autoevaluativos</h1>
+    <div class="questions">
+        <div class="questions-nav">
+            <button onclick="checkMultiple()"> <img src="img/114-user.svg" alt=""> Comprobar respuesta</button>
+            <button onclick="getSolution()"> <img src="img/273-checkmark.svg" alt=""> Solución</button>
+            <button onclick="resetInputs()"> <img src="img/174-bin2.svg" alt=""> Borrar</button>
+        </div>
+        <div class="question">
+            <span>1. </span>Marque las siguientes afirmaciones que sean correctas:
+        </div>
+        <div class="answers" onclick="triedQuestion(1)">
+            <label>
+                <input type="checkbox" name="optionsRadios1" value="yes">
+                <span>A)</span>Un proceso es un programa en ejecución.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios1" value="no">
+                <span>B)</span>El solapamiento entre las operaciones del CPU y los dispositivos de E/S es una forma de paralelismo que el programador puede implementar.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios1" value="yes">
+                <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios1" value="no">
+                <span>D)</span>El término MPMD (por Multiple Process Multiple Data) describe un tipo de arquitectura paralela.
+            </label>
+        </div>
+        <div class="question">
+            <span>2. </span>¿Cuál de siguientes afirmaciones es correcta?
+        </div>
+        <div class="answers" onclick="triedQuestion(2)">
+            <label>
+                <input type="radio" name="optionsRadios2" value="no">
+                <span>A)</span>Un proceso es un programa en ejecución.
+            </label>
+            <label>
+                <input type="radio" name="optionsRadios2" value="no">
+                <span>B)</span>El solapamiento entre las operaciones del CPU y los dispositivos de E/S es una forma de paralelismo que el programador puede implementar.
+            </label>
+            <label>
+                <input type="radio" name="optionsRadios2" value="yes">
+                <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
+            </label>
+            <label>
+                <input type="radio" name="optionsRadios2" value="no">
+                <span>D)</span>El término MPMD (por Multiple Process Multiple Data) describe un tipo de arquitectura paralela.
+            </label>
+        </div>
+        <div class="question">
+            <span>3. </span>Marque las siguientes afirmaciones que sean correctas:
+        </div>
+        <div class="answers" onclick="triedQuestion(3)">
+            <label>
+                <input type="checkbox" name="optionsRadios3" value="no">
+                <span>A)</span>Un proceso es un programa en ejecución.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios3" value="no">
+                <span>B)</span>El solapamiento entre las operaciones del CPU y los dispositivos de E/S es una forma de paralelismo que el programador puede implementar.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios3" value="yes">
+                <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios3" value="yes">
+                <span>D)</span>El término MPMD (por Multiple Process Multiple Data) describe un tipo de arquitectura paralela.
+            </label>
+        </div>
+        <div class="question">
+            <span>4. </span>Marque las siguientes afirmaciones que sean correctas:
+        </div>
+        <div class="answers" onclick="triedQuestion(4)">
+            <label>
+                <input type="checkbox" name="optionsRadios4" value="no">
+                <span>A)</span>Un proceso es un programa en ejecución.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios4" value="yes">
+                <span>B)</span>El solapamiento entre las operaciones del CPU y los dispositivos de E/S es una forma de paralelismo que el programador puede implementar.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios4" value="yes">
+                <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
+            </label>
+            <label>
+                <input type="checkbox" name="optionsRadios4" value="no">
+                <span>D)</span>El término MPMD (por Multiple Process Multiple Data) describe un tipo de arquitectura paralela.
+            </label>
+        </div>
+    </div>
+</div>
+<div class="modal-questions" id="modal-questions" onclick="closeModal()">
+    <h3>Comprobación de respuestas</h3>
+    <span>&times;</span>
+    <p class="initial">Respuesta 1 <img src="img/268-minus-2.svg"> <img src="img/273-checkmark.svg"> <img src="img/272-cross.svg"></p>
+    <p class="initial">Respuesta 2 <img src="img/268-minus-2.svg"> <img src="img/273-checkmark.svg"> <img src="img/272-cross.svg"></p>
+    <p class="initial">Respuesta 3 <img src="img/268-minus-2.svg"> <img src="img/273-checkmark.svg"> <img src="img/272-cross.svg"></p>
+    <p class="initial">Respuesta 4 <img src="img/268-minus-2.svg"> <img src="img/273-checkmark.svg"> <img src="img/272-cross.svg"></p>
+</div>
+<div id="overlay-questions" onclick="closeModal()"></div>
+<script>
+
+    var questions = document.querySelectorAll(".answers");
+    var passArray;
+    var modal = document.querySelector(".modal-questions");
+    var overlayQuestions = document.getElementById("overlay-questions");
+    var modalResults = document.querySelectorAll(".modal-questions p");
+
+    function triedQuestion (e) {
+		e--
+		$(".answers").eq(e).addClass("tried");
+    }
+
+    function checkMultiple () {
+		passArray = [];
+		for(i = 0; i < questions.length; i++){
+			if($(".answers").eq(i).hasClass("tried")){
+                let inputs = questions[i].querySelectorAll("input");
+                let results = []
+				let pass;
+				for(j=0; j < inputs.length; j++){
+					if (inputs[j].checked && inputs[j].value === 'no') {
+                        results.push(false);
+                    } else if (!inputs[j].checked && inputs[j].value === 'yes'){
+                        results.push(false)
+                    } else {
+                        results.push(true)
+                    }
+				}
+				pass =  results.includes(false) ? false : true;
+                passArray.push(pass);
+			} else {
+                passArray.push('n/a');
+            }
+		}
+
+		for (k = 0; k < modalResults.length; k++) {
+			if  (passArray[k] === true) {
+                $(".modal-questions p").eq(k).removeClass('initial');
+                $(".modal-questions p").eq(k).addClass('pass');
+                $(".modal-questions p").eq(k).removeClass('not-pass');
+            } else if (passArray[k] === false){
+                $(".modal-questions p").eq(k).removeClass('initial');
+                $(".modal-questions p").eq(k).addClass('not-pass');
+                $(".modal-questions p").eq(k).removeClass('pass');
+            } else if (passArray[k] === 'n/a'){
+                $(".modal-questions p").eq(k).addClass('initial');
+                $(".modal-questions p").eq(k).removeClass('not-pass');
+                $(".modal-questions p").eq(k).removeClass('pass');
+            }
+		}
+		$("#overlay-questions").toggleClass("show");
+		$("#modal-questions").toggleClass("show");
+        setTimeout(function(){
+            $("#overlay-questions").toggleClass("visible");
+			$("#modal-questions").toggleClass("visible");
+        }, 20);
+    }
+
+    function closeModal () {
+		$("#overlay-questions").toggleClass("show");
+		$("#modal-questions").toggleClass("show");
+        setTimeout(function(){
+            $("#overlay-questions").toggleClass("visible");
+			$("#modal-questions").toggleClass("visible");
+        }, 20);
+    }
+
+    function getSolution () {
+		for (m = 0; m < questions.length; m++) {
+			$(".answers").eq(m).addClass("tried");
+			let inputs = questions[m].querySelectorAll("input");
+			for (n = 0; n < inputs.length; n++) {
+				inputs[n].value === 'yes' ? inputs[n].checked = true : inputs[n].checked = false;
+			}
+		}
+    }
+
+    function resetInputs () {
+		for (p = 0; p < questions.length; p++) {
+			$(".answers").eq(p).removeClass("tried");
+			let inputs = questions[p].querySelectorAll("input");
+			for (q = 0; q < inputs.length; q++) {
+				inputs[q].checked = false;
+			}
+		}
+    }
+
+</script>

@@ -6,68 +6,72 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>VIU - GRADO EN INGENIERÍA INFORMÁTICA</title>
   <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
-  <!-- <link rel="stylesheet" type="text/css" media="all" href="css/media.css"> -->
   <script src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/scorm/APIWrapper_2004.js"></script>
   <script type="text/javascript" src="js/scorm/SCOFunctions.js"></script>
-  <script type="text/javascript" language="javascript" charset="utf-8" src="js/functions.js"></script>
-  <script type="text/javascript" language="javascript" charset="utf-8" src="js/scorm/general.js" ></script>
   <link rel="icon" type="image/x-icon" href="viu_icon.gif">
 </head>
-<body style="overflow:hidden;" onResize="ajustarResolucion()" id="curso">
-
-  <div id="btnIndice">
-    <div class="barra arriba"></div>
-    <div class="barra medio"></div>
-    <div class="barra abajo"></div>
-    <span class="etiqBtn">Índice</span>
-  </div>
-  <header>
-    <div>
-      <h4>Grado en Ingeniería Informática</h4>
-      <h4>Diseño y Desarrollo de Sistemas de Información</h4>
+  <body id="curso">
+    <div id="burger" onclick="toggleMenu()">
+        <div class="bar up"></div>
+        <div class="bar middle"></div>
+        <div class="bar down"></div>
+        <span class="burger-text">Índice</span>
     </div>
-    <div><img src="img/logo.svg"/></div>
-  </header>
-  <section id="contenido">
-    <div id="player" style="position:relative;"></div>
-  </section>
-  <div id="contenedor_indice">
-    <section id="indice">
-      <div class="cabecera-menu">
-        <p>Índice</p>
-      </div>
-      <div class="contInd contenidoPopup">
-        <ul id="listaInd"></ul>
-      </div>
-    </section>
-  </div>
-  <footer id="pie">
-    <button id="btnAtras" onClick="temaAnterior()">Anterior</button>
-    <div id="progreso"></div>
-    <button id="btnSig" onClick="temaSiguiente()">Siguiente</button>
-    <button id="btnSalir" onClick="mostrarSalir()">Salir</button>
-    <button id="btnSalirMini" onClick="mostrarSalir()">x</button>
-  </footer>
-  <div class="overlay" id="overlay" style="display:none;"></div>
-  <section id="retomar">
-      <div class="contRetomar">
-        <p>¿Deseas volver a la última pantalla que visitaste?</p>
+    <header>
         <div>
-            <a href="javascript:siRetomar()" class="siRet">Sí</a>
-            <a href="javascript:noRetomar()" class="noRet">No</a>
+          <h4>Grado en Ingeniería Informática</h4>
+          <h4>Diseño y Desarrollo de Sistemas de Información</h4>
         </div>
-      </div>
-  </section>
-  <section id="salir">
-      <div class="contSalir">
+        <div id="logo"><img src="img/logo.svg"/></div>
+    </header>
+    <div id="menu-container">
+        <div class="menu-header">
+            <p>Índice</p>
+        </div>
+        <div class="menu-content">
+            <ul id="menu-list">
+              <li onclick="goTo(1)">Presentación</li>
+              <li onclick="goTo(2)">Mapa Conceptual</li>
+              <li onclick="goTo(3)">1. Introducción a los sistemas de información</li>
+              <li onclick="goTo(4)">2. Modelos de datos</li>
+              <li onclick="goTo(5)">3. Diseño conceptual de bases de datos</li>
+              <li onclick="goTo(6)">4. Diseño en bases de datos relacionales</li>
+              <li onclick="goTo(7)">5. Implantación de sistemas de información</li>
+              <li onclick="goTo(9)">Conclusiones</li>
+              <li onclick="goTo(9)">Glosario</li>
+              <li onclick="goTo(10)">Ejercicios autoevaluativos</li>
+              <li onclick="goTo(14)">7. Créditos</li>
+            </ul>
+        </div>
+    </div>
+    <section id="content">
+        
+    </section>
+    <footer>
+        <button id="back-btn" onclick="navScreen(-1)">Anterior</button>
+        <div id="progress"></div>
+        <button id="next-btn" onclick="navScreen(1)">Siguiente</button>
+        <button id="logout" onclick="toggleOutModal()">Salir</button>
+        <button id="mini-logout" onclick="toggleOutModal()">&times;</button>
+    </footer>
+    <div id="overlay"></div>
+    <div id="modal-out">
+        <span onclick="toggleOutModal()">&times;</span>
         <p>¿Deseas salir?</p>
         <div>
-            <a href="javascript:siSalir()" class="siRet">Sí</a>
-            <a href="javascript:noSalir()" class="noRet">No</a>
+            <button onclick="logOut()">Si</button>
+            <button onclick="toggleOutModal()">No</button>
         </div>
-      </div>
-  </section>
-  <script type="text/javascript" language="javascript" charset="utf-8" src="js/paginas.js"></script>
+    </div>
+    <div id="modal-resume">
+        <span>&times;</span>
+        <p>¿Deseas volver a la última pantalla que visitaste?</p>
+        <div>
+            <button onclick="resumeCourse()">Si</button>
+            <button onclick="startCourse()">No</button>
+        </div>
+    </div>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

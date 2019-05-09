@@ -1,0 +1,72 @@
+<div id="page-container" class="p-20">
+    <h1 class="unit"><span class="number">1</span>Introducción a los sistemas de información</h1>
+    <img class="float-right-50" src="img/04/25GIIN_Imagen1.jpg">
+    <p>Los sistemas de información están presentes en todo momento y en todo lugar, y en el mundo actual, es evidente que tenemos la necesidad diaria de acceso y procesamiento de nuestra información. En el transcurso del día hacemos uso de los sistemas de información desde diferentes aplicaciones; desde nuestro <i>smartphone</i> o tableta, ya sea para hacer una transferencia de dinero, pagar un recibo pendiente, solicitar un reparto del supermercado o para acceder a las cámaras de videovigilancia de nuestras casas y ver si todo va en orden. De la misma forma, pero a diferente escala, cada instante se ejecutan millones de instrucciones y se procesan miles de datos de sistemas de información más complejos que permiten que la sociedad funcione, que las personas estén comunicadas y que los negocios generen valor y rentabilidad, como es el caso de las aerolíneas y sus miles de pasajeros, las empresas aduaneras y mineras, las corporaciones internacionales, las universidades, bancos y comercios electrónicos, y en general cualquier tipo y tamaño de empresa que busque mantener sus procesos automatizados y su data actualizada en tiempo real.</p>
+    <p>
+        El contexto actual permite que toda organización pueda automatizar sus procesos haciendo uso de diversas tecnologías de la información.  El hecho de poder solicitar el saldo de un número móvil vía mensaje de texto y hacer compras por Internet de una manera segura, son algunos clásicos y básicos ejemplos de que las organizaciones están utilizando la tecnología para incorporarla en su
+        <span class="tooltip" onclick="toggleTip(1)">sistema de información </span>
+        <img style="margin-bottom: -5px" src="img/208-eye-plus.svg">
+        y permitir así, que sus procesos sean cada vez más fáciles de controlar y administrar y a la vez que proporcionen mayor comodidad a sus clientes (Stair y Reynolds, 2000).
+    </p>
+    <div class="tiptext" onclick="toggleTip(1)">
+        <p>Sistema de Información (SI)</p>
+        <span>&times;</span>
+        <p>Un SI es un conjunto de componentes interrelacionados para recolectar, manipular y diseminar datos e información y para disponer de un mecanismo de retroalimentación útil para el cumplimiento de un objetivo o un fin.</p>
+    </div>
+    <p>En el área tecnológica tenemos tres cambios asociados:</p>
+    <ul class="viu">
+        <li>La plataforma digital móvil emergente.</li>
+        <li>El crecimiento del <i>software</i> en línea como un servicio.</li>
+        <li>El crecimiento de la “computación en nube”, donde se ejecuta cada vez más <i>software</i> de negocios a través de Internet.</li>
+    </ul>
+    <p>
+        Los <i>smartphones</i>, tabletas y <i>notebooks</i> representan las nuevas plataformas de computación emergentes, con base a un arreglo de nuevas tecnologías de <i>hardware</i> y <i>software</i>, cada vez más aspectos de la computación de negocios están pasando de las computadoras PC o portátiles, a estos dispositivos móviles. Los gerentes están utilizando con mayor frecuencia estos dispositivos para planear y coordinar su trabajo, comunicarse con los empleados y proveer información para la toma de decisiones (Laudon y Laudon, 2012).
+    </p>
+    <p>
+        El contexto actual permite que toda organización pueda automatizar sus procesos haciendo uso de diversas tecnologías de la información.  El hecho de poder solicitar el saldo de un número móvil vía mensaje de texto y hacer compras por Internet de una manera segura, son algunos clásicos y básicos ejemplos de que las organizaciones están utilizando la tecnología para incorporarla en su
+        <span class="tooltip" onclick="toggleTip(2)">sistema de información 2</span>
+        <img style="margin-bottom: -5px" src="img/208-eye-plus.svg">
+        y permitir así, que sus procesos sean cada vez más fáciles de controlar y administrar y a la vez que proporcionen mayor comodidad a sus clientes (Stair y Reynolds, 2000).
+    </p>
+    <div class="tiptext" onclick="toggleTip(2)">
+        <p>Sistema de Información (SI) 2</p>
+        <span>&times;</span>
+        <p>Un SI es un conjunto de componentes interrelacionados para recolectar, manipular y diseminar datos e información y para disponer de un mecanismo de retroalimentación útil para el cumplimiento de un objetivo o un fin.</p>
+    </div>
+    <p>
+        Los sistemas de información se han convertido en una herramienta indispensable dentro de los negocios y son necesarios para la toma de decisiones tanto a nivel operativo como a nivel estratégico. Cabe resaltar que el concepto de <b>Sistema de Información</b> es diferente al concepto de <b>Tecnología de la Información</b>, siendo muy común que se den confusiones.  Las tecnologías de la información hacen referencia a los equipos informáticos, al <i>software</i> y en general a toda la infraestructura tecnológica, mientras que un sistema de Información va mucho más allá de solo los equipos electrónicos de los que hará uso para su apropiado funcionamiento y almacenamiento de datos. 
+    </p>
+    <h2 class="subunit"><span class="number">1.1</span>Datos, información y sistemas</h2>
+    <p>Los datos son realidades concretas en su estado primario, como el nombre de un empleado y la cantidad de horas trabajadas por él, mientras que la información es la conversión de los datos mediante un proceso o serie de tareas lógicamente relacionadas entre sí y ejecutadas con el fin de producir un resultado definido. En la tabla 1 tenemos los principales tipos de datos y en la Figura 1 tenemos la transformación de datos a información.</p>
+    <div class="external-table">
+        <div>
+            <p>
+                Tabla 1 
+                <br>
+                <i>Tipos de Datos</i>
+            </p>
+            <img src="img/04/tabla-1.svg">
+            <!-- <p>
+                <i>Nota</i>. Recuperado de <a href="http://cblingua.com/lost-in-translation/traduccion-vs-interpretacion/" target="_blank">http://cblingua.com/lost-in-translation/traduccion-vs-interpretacion/</a>
+            </p> -->
+        </div>
+    </div>
+    <div class="pic-viu">
+        <img src="img/04/Figura1.svg" class="responsive"> 
+        <p><i>Figura 1</i>. Transformación de datos en información.</p>
+    </div>
+</div>
+<div class="overlay-tip" id="overlay-tip"></div>
+<script>
+
+    function toggleTip (e) {
+        e--
+        $(".tiptext").eq(e).toggleClass("show");
+        $("#overlay-tip").toggleClass("show");
+        setTimeout(function(){
+            $(".tiptext").eq(e).toggleClass("visible");
+            $("#overlay-tip").toggleClass("visible");
+        }, 20);
+    }
+
+</script>
