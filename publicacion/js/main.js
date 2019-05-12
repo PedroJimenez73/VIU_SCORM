@@ -4,6 +4,7 @@ var burger = document.getElementById("burger");
 var menu = document.getElementById("menu-container");
 
 var menuList = document.getElementById("menu-list");
+var menuItems = document.querySelectorAll("#menu-list li");
 
 var overlay = document.getElementById("overlay");
 var modalOut = document.getElementById("modal-out");
@@ -67,8 +68,6 @@ $(document).ready(function(){
 	estado = doGetValue("cmi.completion_status");	// completed or unknow
 	intento = doGetValue("cmi.suspend_data"); // Arrays de 1 ó 0 por página visitada
 	// objetivo = doGetValue("cmi.objectives.0.score.raw") // 0 ¿?
-  console.log(intento);
-  console.log(typeof intento);
 	if (avance !== "") {
 		currentPage = parseInt(avance);
 		toggleResumeModal(); 
@@ -82,8 +81,30 @@ $(document).ready(function(){
 		intento[0] = "1";
 	} else {
     intento = intento.split(",");
+  }	
+
+  // Closure for IE
+  var funcs = [];
+
+  function createfunc(l) {
+      return function() { goTo(l); };
   }
-	
+
+  for (var m = 0; m < pages.length; m++) {
+      funcs[m] = createfunc(m);
+  }
+ 
+  for (i = 0; i < pages.length; i++) { 
+    if (pages[i].show !== "no") {
+      var node = document.createElement("li");
+      var text = document.createTextNode(pages[i].title);
+      node.appendChild(text);
+      node.onclick = funcs[i];
+      menuList.appendChild(node);
+    }
+  }
+
+
 });
 
 // Nav functions
@@ -93,15 +114,7 @@ function toggleMenu () {
     $("#menu-container").toggleClass("open-menu");
 }
 
-// for (i = 0; i < pages.length; i++) {  // ie trouble
-//   if (pages[i].show !== "no") {
-//     var node = document.createElement("li");
-//     var text = document.createTextNode(pages[i].title);
-//     node.appendChild(text);
-//     node.onclick = function () { goTo( i )};
-//     menuList.append(node)
-//   }
-// }
+
 
 function navScreen(j) {
   currentPage += j;
