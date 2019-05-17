@@ -130,7 +130,7 @@
                         results.push(true)
                     }
 				}
-				pass =  results.includes(false) ? false : true;
+				pass =  results.indexOf(false) > -1 ? false : true;
                 passArray.push(pass);
 			} else {
                 passArray.push('n/a');
