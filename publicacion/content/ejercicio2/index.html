@@ -32,7 +32,7 @@
         </div>
         <div class="answers" onclick="triedQuestion(2)">
             <label>
-                <input type="radio" name="optionsRadios2" value="yes">
+                <input type="radio" name="optionsRadios2" value="no">
                 <span>A)</span>Un proceso es un programa en ejecución.
             </label>
             <label>
@@ -40,7 +40,7 @@
                 <span>B)</span>El solapamiento entre las operaciones del CPU y los dispositivos de E/S es una forma de paralelismo que el programador puede implementar.
             </label>
             <label>
-                <input type="radio" name="optionsRadios2" value="no">
+                <input type="radio" name="optionsRadios2" value="yes">
                 <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
             </label>
             <label>
@@ -86,13 +86,13 @@
                 <span>C)</span>Un algoritmo embarazosamente paralelizable es fácilmente expresado como SPMD o MPMD.
             </label>
             <label>
-                <input type="checkbox" name="optionsRadios4" value="yes">
+                <input type="checkbox" name="optionsRadios4" value="no">
                 <span>D)</span>El término MPMD (por Multiple Process Multiple Data) describe un tipo de arquitectura paralela.
             </label>
         </div>
     </div>
 </div>
-<div class="modal-questions" onclick="closeModal()">
+<div class="modal-questions" id="modal-questions" onclick="closeModal()">
     <h3>Comprobación de respuestas</h3>
     <span>&times;</span>
     <p class="initial">Respuesta 5 <img src="img/268-minus-2.svg"> <img src="img/273-checkmark.svg"> <img src="img/272-cross.svg"></p>
@@ -110,82 +110,83 @@
     var modalResults = document.querySelectorAll(".modal-questions p");
 
     function triedQuestion (e) {
-        questions[e - 1].classList.add("tried");
+		e--
+		$(".answers").eq(e).addClass("tried");
     }
 
     function checkMultiple () {
-        passArray = [];
-        questions.forEach((ans, i) => {
-            if(ans.classList.contains("tried")) {
-                let inputs = ans.querySelectorAll("input");
+		passArray = [];
+		for(i = 0; i < questions.length; i++){
+			if($(".answers").eq(i).hasClass("tried")){
+                let inputs = questions[i].querySelectorAll("input");
                 let results = []
-                let pass;
-                inputs.forEach(el => {
-                    if (el.checked && el.value === 'no') {
+				let pass;
+				for(j=0; j < inputs.length; j++){
+					if (inputs[j].checked && inputs[j].value === 'no') {
                         results.push(false);
-                    } else if (!el.checked && el.value === 'yes'){
+                    } else if (!inputs[j].checked && inputs[j].value === 'yes'){
                         results.push(false)
                     } else {
                         results.push(true)
                     }
-                })
-                pass =  results.indexOf(false) > -1 ? false : true;
+				}
+				pass =  results.indexOf(false) > -1 ? false : true;
                 passArray.push(pass);
-            } else {
+			} else {
                 passArray.push('n/a');
             }
-        })
+		}
 
-        modalResults.forEach((mod, i) => {
-            if  (passArray[i] === true) {
-                mod.classList.remove('initial');
-                mod.classList.add('pass');
-                mod.classList.remove('not-pass');
-            } else if (passArray[i] === false){
-                mod.classList.remove('initial');
-                mod.classList.add('not-pass');
-                mod.classList.remove('pass');
-            } else if (passArray[i] === 'n/a'){
-                mod.classList.add('initial');
-                mod.classList.remove('not-pass');
-                mod.classList.remove('pass');
+		for (k = 0; k < modalResults.length; k++) {
+			if  (passArray[k] === true) {
+                $(".modal-questions p").eq(k).removeClass('initial');
+                $(".modal-questions p").eq(k).addClass('pass');
+                $(".modal-questions p").eq(k).removeClass('not-pass');
+            } else if (passArray[k] === false){
+                $(".modal-questions p").eq(k).removeClass('initial');
+                $(".modal-questions p").eq(k).addClass('not-pass');
+                $(".modal-questions p").eq(k).removeClass('pass');
+            } else if (passArray[k] === 'n/a'){
+                $(".modal-questions p").eq(k).addClass('initial');
+                $(".modal-questions p").eq(k).removeClass('not-pass');
+                $(".modal-questions p").eq(k).removeClass('pass');
             }
-        })
-        overlayQuestions.classList.toggle("show");
-        modal.classList.toggle("show");
+		}
+		$("#overlay-questions").toggleClass("show");
+		$("#modal-questions").toggleClass("show");
         setTimeout(function(){
-            overlayQuestions.classList.toggle("visible");
-            modal.classList.toggle("visible");
+            $("#overlay-questions").toggleClass("visible");
+			$("#modal-questions").toggleClass("visible");
         }, 20);
     }
 
     function closeModal () {
-        overlayQuestions.classList.toggle("show");
-        modal.classList.toggle("show");
+		$("#overlay-questions").toggleClass("show");
+		$("#modal-questions").toggleClass("show");
         setTimeout(function(){
-            overlayQuestions.classList.toggle("visible");
-            modal.classList.toggle("visible");
+            $("#overlay-questions").toggleClass("visible");
+			$("#modal-questions").toggleClass("visible");
         }, 20);
     }
 
     function getSolution () {
-        questions.forEach((ans, i) => {
-            ans.classList.add('tried')
-            let inputs = ans.querySelectorAll("input");
-            inputs.forEach(el => {
-                el.value === 'yes' ? el.checked = true : el.checked = false
-            })
-        })
+		for (m = 0; m < questions.length; m++) {
+			$(".answers").eq(m).addClass("tried");
+			let inputs = questions[m].querySelectorAll("input");
+			for (n = 0; n < inputs.length; n++) {
+				inputs[n].value === 'yes' ? inputs[n].checked = true : inputs[n].checked = false;
+			}
+		}
     }
 
     function resetInputs () {
-        questions.forEach((ans, i) => {
-            ans.classList.remove('tried')
-            let inputs = ans.querySelectorAll("input");
-            inputs.forEach(el => {
-                el.checked = false
-            })
-        }) 
+		for (p = 0; p < questions.length; p++) {
+			$(".answers").eq(p).removeClass("tried");
+			let inputs = questions[p].querySelectorAll("input");
+			for (q = 0; q < inputs.length; q++) {
+				inputs[q].checked = false;
+			}
+		}
     }
 
 </script>

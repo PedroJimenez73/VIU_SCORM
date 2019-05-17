@@ -602,7 +602,7 @@ svg {
   }
 
   .container-m {
-    display: initial;
+    display: block;
   }
 }
 
@@ -1381,7 +1381,7 @@ tr td {
   }
 
   .glosario-small {
-    display: initial;
+    display: block;
   }
 }
 .lista_terminos_small {
@@ -1567,7 +1567,7 @@ tr td {
 }
 
 .modal-questions.show {
-  display: initial;
+  display: block;
 }
 
 .modal-questions.visible {
